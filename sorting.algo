@@ -1,0 +1,24 @@
+PROCEDURE sorting (VAR T :ARRAY_OF INTEGER ; in1,in2 : INTEGER ; )
+VAR
+Aux : INTEGER ;
+BEGIN
+Aux := T [in1] ;
+T[in1] := T [in2]
+T [in2] :=Aux ;
+END;
+
+PROCEDURE tri (VAR T :ARRAY_OF INTEGER ; n : INTEGER)
+VAR
+i, j : INTEGER ;
+BEGIN
+FOR i FROM 2 TO n STEP 1  DO
+
+BEGIN
+j :=i ;
+WHILE ((j>1 ) && (T[j] <T[j-1])) DO
+    BEGIN
+    sorting (T, j , j-1);
+    j :=j-1;
+END_WHILE
+END_FOR ;
+END;
